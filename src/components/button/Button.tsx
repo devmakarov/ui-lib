@@ -1,9 +1,5 @@
 import { forwardRef, memo, MouseEvent } from "react";
-import {
-  BUTTON_DEFAULT_CLASS,
-  BUTTON_DEFAULT_SIZE,
-  BUTTON_PRIMARY_CLASS,
-} from "./conts";
+import { BUTTON_DEFAULT, BUTTON_DEFAULT_SIZE, BUTTON_PRIMARY } from "./const";
 import "./index.scss";
 import { UIButton } from "./types";
 
@@ -25,17 +21,17 @@ const Button = forwardRef<HTMLButtonElement, UIButton>((props, ref) => {
   };
 
   const prepareClasses = (): string => {
-    const typeClassName = type ? `ui-btn_${type}` : BUTTON_PRIMARY_CLASS;
+    const typeClassName = type ? `ui-btn_${type}` : BUTTON_PRIMARY;
     const sizeClassName = size ? `ui-btn_${size}` : BUTTON_DEFAULT_SIZE;
 
-    return `${BUTTON_DEFAULT_CLASS} ${typeClassName} ${sizeClassName} ${className}`;
+    return `${BUTTON_DEFAULT} ${typeClassName} ${sizeClassName} ${className}`;
   };
   const classNames = prepareClasses();
 
   return (
     <button
       className={classNames}
-      style={{ ...customStyles }}
+      style={customStyles}
       disabled={disabled}
       ref={ref}
       onClick={handleClick}
