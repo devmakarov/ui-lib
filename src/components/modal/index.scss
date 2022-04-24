@@ -1,0 +1,90 @@
+.ui-modal { 
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+
+  &_show {
+    display: flex;
+    opacity: 1;
+
+    .ui-modal__overlay {
+      animation: show .3s ease-out;
+    }
+
+    .ui-modal__content {
+      animation: show .3s ease-out, showContent .3s ease-in-out;
+    }
+  }
+
+  &_hide {
+    .ui-modal__overlay {
+      animation: hide .3s ease-out;
+    }
+
+    .ui-modal__content {
+      animation: hide .3s ease-out, hideContent .3s ease-in-out;
+    }
+  }
+
+  &__overlay {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    animation: show;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    background-color: #fff;
+    z-index: 2;
+    padding: 16px; 
+    border-radius: 8px;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showContent {
+  0% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hideContent {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}

@@ -1,1 +1,1 @@
-# ul-lib
+Small React UI library with useful and well tested components! Written by Ilya Makarov -- telegram @devmakarov 
