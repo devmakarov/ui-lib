@@ -1,7 +1,15 @@
-import { render, screen } from "@testing-library/react";
-import { MODAL_CONTENT_DEFAULT_CLASS } from "./const";
+import { act, render, renderHook, screen } from "@testing-library/react";
+import {
+  MODAL_CONTENT_DEFAULT_CLASS,
+  MODAL_OVERLAY_DEFAULT_CLASS,
+  MODAL_SHOW_CLASS,
+} from "./const";
+import useModal from "./hooks/useModal";
+import useModalAnimation from "./hooks/useModalAnimation";
 import Modal from "./Modal";
 import ModalContent from "./ModalContent";
+import ModalHiddenContainer from "./ModalHiddenContainer";
+import ModalOverlay from "./ModalOverlay";
 
 test("default modal rendering", () => {
   const visible = false;
@@ -55,14 +63,56 @@ test("modal content rendering", () => {
   const modalContent = container.querySelector(
     `.${MODAL_CONTENT_DEFAULT_CLASS}`
   );
-  const dialog = container.querySelector('.dialog');
+  const dialog = container.querySelector(".dialog");
   expect(modalContent).toBeInTheDocument();
   expect(dialog).toBeInTheDocument();
   expect(modalContent).toHaveClass(customClassName);
 });
 
-// test("modal hidden content rendering", () => {});
-// test("modal overlay rendering", () => {});
+test("modal hidden content rendering", () => {
+  const className = "modal-info";
+  const { container, rerender } = render(
+    <ModalHiddenContainer isHidden={true}>
+      <div className={className}></div>
+    </ModalHiddenContainer>
+  );
 
-// test("useModal hook testing", () => {});
-// test("useModalAnimation testing", () => {});
+  const getInfoBlock = () => container.querySelector(`.${className}`);
+  expect(getInfoBlock()).not.toBeInTheDocument();
+
+  rerender(
+    <ModalHiddenContainer isHidden={false}>
+      <div className={className}></div>
+    </ModalHiddenContainer>
+  );
+  expect(getInfoBlock()).toBeInTheDocument();
+});
+
+test("modal overlay rendering", () => {
+  const { container } = render(<ModalOverlay />);
+  const overlay = container.querySelector(`.${MODAL_OVERLAY_DEFAULT_CLASS}`);
+
+  expect(overlay).toBeInTheDocument();
+});
+
+test("useModal hook testing", () => {
+  const { result } = renderHook(useModal);
+
+  expect(result.current.isVisible).toBe(false);
+  act(() => result.current.openModal());
+  expect(result.current.isVisible).toBe(true);
+  act(() => result.current.closeModal());
+  expect(result.current.isVisible).toBe(false);
+});
+
+test("useModalAnimation testing", () => {
+  let { result, rerender } = renderHook(useModalAnimation);
+
+  expect(result.current.isHidden).toBe(true);
+  expect(result.current.modalClassName).toBe("");
+
+  rerender(true);
+
+  expect(result.current.isHidden).toBe(false);
+  expect(result.current.modalClassName).toBe(MODAL_SHOW_CLASS);
+});
