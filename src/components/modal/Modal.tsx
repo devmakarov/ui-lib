@@ -32,7 +32,12 @@ const Modal: FC<UIModal & Children> = ({
   };
 
   return (
-    <div className={modalClassNames} onClick={hideByClickOutside} tabIndex={-1}>
+    <div
+      className={modalClassNames}
+      onClick={hideByClickOutside}
+      tabIndex={-1}
+      role="dialog"
+    >
       <ModalHiddenContainer isHidden={isHidden}>
         <ModalOverlay />
         <ModalContent className={className}>{children}</ModalContent>

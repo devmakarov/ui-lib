@@ -11,34 +11,35 @@ function useModalAnimation(visible: boolean) {
   const [isHidden, setIsHidden] = useState(() => true);
   const [modalClassName, setClassName] = useState(() => "");
 
-  const startShowAnimation = () => {
-    setClassName(MODAL_SHOW_CLASS);
-    setIsHidden(false);
-  };
-
-  const startHideAnimation = () => {
-    if (!modalClassName) return;
-
-    setClassName(`${modalClassName} ${MODAL_HIDE_CLASS}`);
-    setIsHidden(false);
-  };
-
-  const clearAnimation = () => {
-    setTimeout(() => {
-      setClassName("");
-      setIsHidden(true);
-    }, ANIMATION_DURATION);
-  };
-
   useEffect(() => {
+    const startShowingAnimation = () => {
+      setClassName(MODAL_SHOW_CLASS);
+      setIsHidden(false);
+    };
+
+    const startHiddingAnimation = () => {
+      if (!modalClassName) return;
+
+      setClassName(`${modalClassName} ${MODAL_HIDE_CLASS}`);
+      setIsHidden(false);
+    };
+
+    const clearAnimation = () => {
+      setTimeout(() => {
+        setClassName("");
+        setIsHidden(true);
+      }, ANIMATION_DURATION);
+    };
+
     if (isShowingStarted) {
-      startShowAnimation();
+      startShowingAnimation();
       return;
     }
 
-    startHideAnimation();
+    startHiddingAnimation();
     clearAnimation();
-  }, [visible]);
+    // eslint-disable-next-line
+  }, [visible, isShowingStarted]);
 
   return {
     isHidden,
