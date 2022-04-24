@@ -1,5 +1,6 @@
 import Button from "components/button/Button";
-import Modal, { useModal } from "../Modal";
+import useModal from "../hooks/useModal";
+import Modal from "../Modal";
 
 function Demo() {
   const { isVisible, closeModal, openModal } = useModal();

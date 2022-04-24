@@ -15,21 +15,21 @@
     opacity: 1;
 
     .ui-modal__overlay {
-      animation: show .3s ease-out;
+      animation: show .2s ease-out;
     }
 
     .ui-modal__content {
-      animation: show .3s ease-out, showContent .3s ease-in-out;
+      animation: show .2s ease-out, showContent .2s ease-in-out;
     }
   }
 
   &_hide {
     .ui-modal__overlay {
-      animation: hide .3s ease-out;
+      animation: hide .2s ease-out;
     }
 
     .ui-modal__content {
-      animation: hide .3s ease-out, hideContent .3s ease-in-out;
+      animation: hide .2s ease-out, hideContent .2s ease-in-out;
     }
   }
 
