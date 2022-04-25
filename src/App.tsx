@@ -1,12 +1,7 @@
-import Demo from "components/modal/demo";
+import Index from "screen";
 
-function App() { 
-
-  return (
-    <div className="App">
-      <Demo/>
-    </div>
-  );
+function App() {
+  return <Index />;
 }
 
 export default App;

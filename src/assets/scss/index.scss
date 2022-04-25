@@ -1,0 +1,51 @@
+body {
+	background-color: #ececec;
+}
+
+.container {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.intro {
+	margin: 16px auto 72px; 
+}
+
+.preview {
+	margin: 60px auto;
+	
+	&__title {
+		font-size: 24px;
+		font-weight: normal;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__source {
+		font-size: 16px;
+		text-decoration: none;
+		color: #000;
+	}
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.custom-modal {
+		display: flex;
+		height: auto;
+	}
+}
+
+.mb {
+	&-24 {
+		margin-bottom: 24px;
+	}
+
+	&-16 {
+		margin-bottom: 16px;
+	}
+}

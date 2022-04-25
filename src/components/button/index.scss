@@ -2,7 +2,7 @@
 
 @mixin focus($color) { 
   &:active, &:focus-visible {
-    box-shadow: 1px 2px 1px 0px $color;
+    box-shadow: 0px 1px 2px 0px $color;
   }
 }
 
@@ -20,14 +20,16 @@
   transition: all .3s ease-out;
   outline: none; 
   border: 1px solid transparent;
-  border-radius: 4px;
   width: 100%; 
   box-sizing: border-box;
+  user-select: none;
+  appearance: none;
+  
 
   &_primary {
-    border: 1px solid $bgPrimary;
-    color: white;
-    color: $bgPrimary;
+    border: 1px solid $bgBorder;
+    color: $colorPrimary;
+    background-color: $bgPrimary;
 
     @include hover($hoverPrimary);
     @include focus($activePrimary);
@@ -51,5 +53,15 @@
   
   &_large {
     max-width: 190px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    user-select: none;
+
+    &:hover, &:focus-visible, &:active {
+      box-shadow: unset;
+    }
   }
 }
