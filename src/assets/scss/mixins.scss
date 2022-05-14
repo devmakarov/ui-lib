@@ -1,0 +1,11 @@
+@mixin focus($color) { 
+  &:active, &:focus-visible {
+    box-shadow: 0px 1px 2px 0px $color;
+  }
+}
+
+@mixin hover($color) { 
+  &:hover { 
+    box-shadow: 0px 1px 4px 0px $color;
+  }
+}

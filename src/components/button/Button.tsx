@@ -10,6 +10,7 @@ const Button = forwardRef<HTMLButtonElement, UIButton>((props, ref) => {
     disabled = false,
     onClick,
     children,
+
     style: customStyles,
     className = "",
   } = props;

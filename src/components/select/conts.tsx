@@ -1,0 +1,13 @@
+export const SELECT_OPTION = "ui-select__option";
+export const SELECT_OPTION_ACTIVE = "ui-select__option_active";
+export const SELECT_BODY = 'ui-select__body'
+export const SELECT_BODY_SHOW = 'ui-select__body_show'
+export const SELECT = 'ui-select'
+export const SELECT__HEAD = 'ui-select__head'
+export const SELECT__VALUE = 'ui-select__value'
+export const SELECT__INPUT = 'ui-search__input'
+export const SELECT__SEARCH = 'ui-select__search'
+export const SEARCH = 'ui-search'
+export const SELECT__MULTIPLE = 'ui-select__multiple'
+export const SELECT__MULTIPLE_LABEL = 'ui-select__multiple-label'
+export const SELECT__MULTIPLE_CLEAR = 'ui-select__multiple-clear'
