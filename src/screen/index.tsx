@@ -1,6 +1,6 @@
-import { FC } from "react";
-import ButtonDemo from "components/button/demo/index";
-import ModalDemo from 'components/modal/demo/index';
+import { FC } from 'react'
+import ButtonDemo from 'components/button/demo/index'
+import ModalDemo from 'components/modal/demo/index'
 
 const Index: FC = () => {
   return (
@@ -8,7 +8,7 @@ const Index: FC = () => {
       <ButtonDemo />
       <ModalDemo/>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

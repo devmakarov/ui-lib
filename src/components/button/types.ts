@@ -1,7 +1,7 @@
-import { ReactNode, MouseEvent } from "react";
+import { ReactNode, MouseEvent } from 'react'
 
-export type ButtonSizes = "small" | "medium" | "large";
-export type ButtonTypes = "primary" | "info" | "success" | "danger";
+export type ButtonSizes = 'small' | 'medium' | 'large';
+export type ButtonTypes = 'primary' | 'info' | 'success' | 'danger';
 
 type BtnStyles = Record<string, number | string>;
 
