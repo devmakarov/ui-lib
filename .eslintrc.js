@@ -23,6 +23,7 @@ module.exports = {
         'react/prop-types': 'off',
         'react/react-in-jsx-scope': 'off',
         'linebreak-style': ['error', 'unix'],
+        'no-case-declarations': 'off',
         quotes: ['error', 'single'],
         semi: ['error', 'never'],
     },

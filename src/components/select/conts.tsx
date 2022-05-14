@@ -1,5 +1,5 @@
-export const SELECT_OPTION = "ui-select__option";
-export const SELECT_OPTION_ACTIVE = "ui-select__option_active";
+export const SELECT_OPTION = 'ui-select__option'
+export const SELECT_OPTION_ACTIVE = 'ui-select__option_active'
 export const SELECT_BODY = 'ui-select__body'
 export const SELECT_BODY_SHOW = 'ui-select__body_show'
 export const SELECT = 'ui-select'

@@ -1,7 +1,7 @@
-import { forwardRef, memo, MouseEvent } from "react";
-import { BUTTON_DEFAULT, BUTTON_DEFAULT_SIZE, BUTTON_PRIMARY } from "./const";
-import "./index.scss";
-import { UIButton } from "./types";
+import { forwardRef, memo, MouseEvent } from 'react'
+import { BUTTON_DEFAULT, BUTTON_DEFAULT_SIZE, BUTTON_PRIMARY } from './const'
+import './index.scss'
+import { UIButton } from './types'
 
 const Button = forwardRef<HTMLButtonElement, UIButton>((props, ref) => {
   const {
@@ -12,22 +12,22 @@ const Button = forwardRef<HTMLButtonElement, UIButton>((props, ref) => {
     children,
 
     style: customStyles,
-    className = "",
-  } = props;
+    className = '',
+  } = props
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    if (disabled) return;
+    if (disabled) return
 
-    onClick && onClick(e);
-  };
+    onClick && onClick(e)
+  }
 
   const prepareClasses = (): string => {
-    const typeClassName = type ? `ui-btn_${type}` : BUTTON_PRIMARY;
-    const sizeClassName = size ? `ui-btn_${size}` : BUTTON_DEFAULT_SIZE;
+    const typeClassName = type ? `ui-btn_${type}` : BUTTON_PRIMARY
+    const sizeClassName = size ? `ui-btn_${size}` : BUTTON_DEFAULT_SIZE
 
-    return `${BUTTON_DEFAULT} ${typeClassName} ${sizeClassName} ${className}`;
-  };
-  const classNames = prepareClasses();
+    return `${BUTTON_DEFAULT} ${typeClassName} ${sizeClassName} ${className}`
+  }
+  const classNames = prepareClasses()
 
   return (
     <button
@@ -39,8 +39,8 @@ const Button = forwardRef<HTMLButtonElement, UIButton>((props, ref) => {
     >
       {children}
     </button>
-  );
-});
+  )
+})
 
-Button.displayName = "Button";
-export default memo(Button);
+Button.displayName = 'Button'
+export default memo(Button)

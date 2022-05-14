@@ -1,13 +1,13 @@
-import { FC, useState } from "react";
-import { Option } from "../Option";
-import { Select } from "../Select";
-import { UISelectValue } from "../types";
+import { FC, useState } from 'react'
+import { Option } from '../Option'
+import { Select } from '../Select'
+import { UISelectValue } from '../types'
 
 const ShowCase: FC = () => {
-  const [value] = useState("");
+  const [value] = useState('')
   const onChange = (e: UISelectValue) => {
-    console.log(e);
-  };
+    console.log(e)
+  }
 
   return (
     <section className="mb-16">
@@ -23,14 +23,14 @@ const ShowCase: FC = () => {
         </Option>
       </Select>
     </section>
-  );
-};
+  )
+}
 
 const ShowCasePredefined: FC = () => {
-  const [value] = useState("option_1");
+  const [value] = useState('option_1')
   const onChange = (e: UISelectValue) => {
-    console.log(e);
-  };
+    console.log(e)
+  }
 
   return (
     <section className="mb-16">
@@ -46,14 +46,14 @@ const ShowCasePredefined: FC = () => {
         </Option>
       </Select>
     </section>
-  );
-};
+  )
+}
 
 const ShowCaseMultiple: FC = () => {
-  const [value] = useState(["option_1"]);
+  const [value] = useState(['option_1'])
   const onChange = (e: UISelectValue) => {
-    console.log(e);
-  };
+    console.log(e)
+  }
 
   return (
     <section>
@@ -69,8 +69,8 @@ const ShowCaseMultiple: FC = () => {
         </Option>
       </Select>
     </section>
-  );
-};
+  )
+}
 
 const Demo: FC = () => {
   return (
@@ -91,7 +91,7 @@ const Demo: FC = () => {
       <ShowCasePredefined />
       <ShowCaseMultiple />
     </section>
-  );
-};
+  )
+}
 
-export default Demo;
+export default Demo
