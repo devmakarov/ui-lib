@@ -1,7 +1,7 @@
-import Index from "screen";
+import Index from 'screen'
 
 function App() {
-  return <Index />;
+    return <Index />
 }
 
-export default App;
+export default App

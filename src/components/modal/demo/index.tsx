@@ -1,10 +1,10 @@
-import Button from "components/button/Button";
-import { FC } from "react";
-import useModal from "../hooks/useModal";
-import Modal from "../Modal";
+import Button from 'components/button/Button'
+import { FC } from 'react'
+import useModal from '../hooks/useModal'
+import Modal from '../Modal'
 
 const ShowCase: FC = () => {
-  const { isVisible, closeModal, openModal } = useModal();
+  const { isVisible, closeModal, openModal } = useModal()
   return (
     <>
       <Modal visible={isVisible} onCancel={closeModal} className="custom-modal">
@@ -19,7 +19,7 @@ const ShowCase: FC = () => {
 
       <Button onClick={openModal}>Show</Button>
     </>
-  );
+  )
 }
 
 function Demo() {
@@ -39,7 +39,7 @@ function Demo() {
 
       <ShowCase />
     </section>
-  );
+  )
 }
 
-export default Demo;
+export default Demo

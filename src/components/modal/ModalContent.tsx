@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Children } from "types";
-import { MODAL_CONTENT_DEFAULT_CLASS } from "./const";
-import { UIModalContent } from "./types";
+import { FC } from 'react'
+import { Children } from 'types'
+import { MODAL_CONTENT_DEFAULT_CLASS } from './const'
+import { UIModalContent } from './types'
 
 const ModalContent: FC<UIModalContent & Children> = ({
   children,
@@ -11,7 +11,7 @@ const ModalContent: FC<UIModalContent & Children> = ({
     <div className={`${MODAL_CONTENT_DEFAULT_CLASS} ${className}`}>
       {children}
     </div>
-  );
-}; 
+  )
+} 
 
-export default ModalContent;
+export default ModalContent

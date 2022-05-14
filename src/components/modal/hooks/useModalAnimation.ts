@@ -1,50 +1,50 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 import {
   ANIMATION_DURATION,
   MODAL_HIDE_CLASS,
   MODAL_SHOW_CLASS,
-} from "../const";
+} from '../const'
 
 function useModalAnimation(visible: boolean) {
-  const isShowingStarted = visible;
+  const isShowingStarted = visible
 
-  const [isHidden, setIsHidden] = useState(() => true);
-  const [modalClassName, setClassName] = useState(() => "");
+  const [isHidden, setIsHidden] = useState(() => true)
+  const [modalClassName, setClassName] = useState(() => '')
 
   useEffect(() => {
     const startShowingAnimation = () => {
-      setClassName(MODAL_SHOW_CLASS);
-      setIsHidden(false);
-    };
+      setClassName(MODAL_SHOW_CLASS)
+      setIsHidden(false)
+    }
 
     const startHiddingAnimation = () => {
-      if (!modalClassName) return;
+      if (!modalClassName) return
 
-      setClassName(`${modalClassName} ${MODAL_HIDE_CLASS}`);
-      setIsHidden(false);
-    };
+      setClassName(`${modalClassName} ${MODAL_HIDE_CLASS}`)
+      setIsHidden(false)
+    }
 
     const clearAnimation = () => {
       setTimeout(() => {
-        setClassName("");
-        setIsHidden(true);
-      }, ANIMATION_DURATION);
-    };
-
-    if (isShowingStarted) {
-      startShowingAnimation();
-      return;
+        setClassName('')
+        setIsHidden(true)
+      }, ANIMATION_DURATION)
     }
 
-    startHiddingAnimation();
-    clearAnimation();
+    if (isShowingStarted) {
+      startShowingAnimation()
+      return
+    }
+
+    startHiddingAnimation()
+    clearAnimation()
     // eslint-disable-next-line
   }, [visible, isShowingStarted]);
 
   return {
     isHidden,
     modalClassName,
-  };
+  }
 }
 
-export default useModalAnimation;
+export default useModalAnimation
